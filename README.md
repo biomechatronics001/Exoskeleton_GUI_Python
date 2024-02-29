@@ -1,3 +1,72 @@
-The most recent version is v.6.
+# About
 
-To run the code you only need to install the PyQtGraph library.
+This repository contains all the files related to the development of the GUI for the Hip Exoskeleton GUI.
+
+Each of the files correspond to a different version of the GUI and track the development proccess of it.
+
+For convinience, at the beggining of each of the files, a general description of the code and the changes made is given.
+
+### The GUI operates along other pices of code stored and running in different elements of hardware. Without these other elements (hardware and software) the GUI cannot work properly.
+
+## Brief overview of the whole system (software & hardware interactions)
+
+There are different software elements running into different devices:
+
+- Software
+    1. High-level Controller [Python]
+    2. Data handling (Receive & Transmit) and drive the motors [C++/Arduino]
+    3. IMU data adquisition [Raspberry Pi OS]
+    4. Data transmit & recieve (Exoskeleton) [C++/Arduino]
+    5. Data transmit & recieve (Remote PC) [C++/Arduino]
+    6. GUI [Python]
+
+- Hardware
+    1. PC
+    2. Teensy 4.1
+    3. Raspberry Pi Zero W
+    4. Itsy-Bitsy nRF52840 (Exoskeleton)
+    5. Itsy-Bitsy nRF52840 (Remote PC)
+    6. PC
+
+![Software Setup 1](Software_setup_01.png)
+
+![Software Setup 2](Software_setup_02.png)
+
+# Requiremets for running the GUI
+
+1. The code running in Teensy 4.1 must contain a proper function to gather, encode and send that data through serial protocol to the Bluetooth module on the exoskeleton.
+2. The Bluetooth module on the exoskeleton must have a uploaded the corresponding code as well as the Bluetooth device on the Remote PC.
+
+# Running the GUI
+
+###  To run the code you need to install the following libraries:
+
+ - PyQtGraph library: https://www.pyqtgraph.org/
+ - Serial
+
+### Running the GUI is very easy, just need to execute the code (Python interpreter needed).
+
+1. Connect the Itsy-Bitsy nRF52840 (Remote PC) Bluetooth device to the Remote PC using the proppet cable.
+2. Execute the code (using the Python interpreter).
+3. Select the COM port where the Bluetooth module is connected.
+4. Click the "Connect Bluetooth" button.
+
+The most recent version of the GUI is "HipExo_GUI_v6.py".
+
+### The following window shows how the most recent version of the GUI looks like.
+
+![GUI v.6](GUI_v6.png)
+
+Youtube video: https://youtu.be/w6m0pwIsVQM
+
+### The GUI has the following features:
+
+- Display in real-time up to 6 different signals
+    - Left IMU pitch angle
+    - Right IMU pitch angle
+    - Left motor's desired and actual torque
+    - Right motor's desired and actual torque
+
+- Log data (csv file)
+- Detect the available COM ports
+- Select the COM port for the communication
