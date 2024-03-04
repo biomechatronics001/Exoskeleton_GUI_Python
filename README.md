@@ -35,7 +35,7 @@ There are different software elements running into different devices:
 # Requiremets for running the GUI
 
 1. The code running in Teensy 4.1 must contain a proper function to gather, encode and send that data through serial protocol to the Bluetooth module on the exoskeleton.
-2. The Bluetooth module on the exoskeleton must have a uploaded the corresponding code as well as the Bluetooth device on the Remote PC.
+2. The Bluetooth module on the exoskeleton must have uploaded the corresponding code as well as the Bluetooth device on the Remote PC.
 
 # Running the GUI
 
@@ -46,7 +46,7 @@ There are different software elements running into different devices:
 
 ### Running the GUI is very easy, just need to execute the code (Python interpreter needed).
 
-1. Connect the Itsy-Bitsy nRF52840 (Remote PC) Bluetooth device to the Remote PC using the proppet cable.
+1. Connect the Itsy-Bitsy nRF52840 (Remote PC) Bluetooth device to the Remote PC using the proper cable.
 2. Execute the code (using the Python interpreter).
 3. Select the COM port where the Bluetooth module is connected.
 4. Click the "Connect Bluetooth" button.
